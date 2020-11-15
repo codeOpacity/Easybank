@@ -1,0 +1,262 @@
+@import url("https://fonts.google.com/specimen/Public+Sans");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --DarkBlue: hsl(233, 26%, 24%);
+    --LimeGreen: hsl(136, 65%, 51%);
+    --BrightCyan: hsl(192, 70%, 51%);
+    --GrayishBlue: hsl(233, 8%, 62%);
+    --LightGrayishBlue: hsl(220, 16%, 96%);
+    --LightGray : hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    overflow-x: hidden;
+    font-family: "Open Sans";
+    line-height: 1.5;
+    font-size: 18px;
+}
+ p{
+    margin: 1rem 0;
+    color: var(--GrayishBlue);
+    font-size: 16px;
+}
+
+.container{
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+.btn{
+    display: inline-block;
+    color: var(--White);
+    padding: 6px 15px;
+    border-radius: 40px;
+    background:linear-gradient(45deg,hsl(136, 65%, 51%),hsl(192, 70%, 51%));
+}
+.btn:hover{
+    background:linear-gradient(hsl(192, 70%, 51%),hsl(192, 70%, 51%));
+}
+img{
+    max-width: 100%;
+}
+.grid{
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+}
+.grid-2{
+        grid-template-columns: repeat(2,1fr);
+}
+.grid-4{
+        grid-template-columns: repeat(4,1fr);
+}
+
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+footer,section{
+    padding:60px 0;
+}
+.title{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.desp{
+    max-width: 70%;
+    padding:1rem 0;
+
+}
+h4{
+    opacity: .6;
+    font-weight: 500;
+    font-size: 14px;
+    margin: .7em 0;
+}
+/*main*/
+header{
+    position: fixed;
+    width: 100%;
+    background: var(--White);
+    padding: 16px 0;
+    z-index: 999;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.bar{
+    display: none;
+}
+.menu a{
+    position: relative;
+    margin: 0 18px;
+    color: var(--DarkBlue);
+    font-size: 1em;
+    box-sizing: border-box;
+    padding: 16px 0;
+}
+.menu a::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    background:linear-gradient(45deg,hsl(136, 65%, 51%),hsl(192, 70%, 51%));
+    width: 0%;
+    transition: .4s ease;
+    bottom: -0px;
+    left: 0;
+}
+.menu a:hover::after{
+    width: 100%;
+}
+
+main .container{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: space-between;
+}
+main h1{
+    color: var(--DarkBlue);
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+main .part{
+    flex-basis: 47%;
+}
+main::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url("./images/bg-intro-desktop.svg");
+    height: 100%;
+    width: 60%;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+section .item img{
+    width: 80px;
+    height: 80px;
+}
+section .item h3{ 
+   color: var(--second);
+}
+.blog-card .imgbox{
+    position: relative;
+    border-radius: 10px;
+    height: 200px;
+    overflow: hidden;
+}
+.blog-card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.blog-card .imgbox:hover img{
+    transform: scale(1.3);
+}
+footer{
+    background-color: hsl(233, 26%, 24%);
+}
+footer .logo img{
+    background:var(--White);
+    padding: 10px;
+    border-radius: 20px;
+}
+.item li{
+    color: var(--White);
+    cursor: pointer;
+}
+footer .item p{
+    margin-top: 1em;
+    color: var(--White);
+}
+.social{
+    margin-top: 1rem;
+    display: flex;
+}
+.social a{
+    margin: 0 7px;
+}
+.social img{
+    width: 24px;
+}
+.social a:hover{
+    filter: invert(1);
+}
+
+/*media*/
+@media (max-width:769px){
+    .grid-4{
+        grid-template-columns: 1fr;
+    }
+    .blog-card img{
+       width: 100%;
+    }
+    .phn{
+        width: 600px;
+    }
+    
+    .row{
+        flex-direction: column;
+    }
+    .bar{
+        cursor: pointer;
+        display: block;
+    }
+    main::after{
+        content: "";
+        transform: rotate(0deg);
+        height: 60%;
+        width: 100%;
+    }
+    .menu{
+        display: none;
+    }
+    .container{
+        padding: 0 30px;
+    }
+    .logo img{
+        width: 100px;
+    }
+    nav .btn{
+        display: none;
+    }
+    .title{
+        text-align: center;
+    }
+    .two{
+        order: 1;
+    }
+    .one{
+        order: 2;
+    }
+    .desp{
+        min-width: 100%;
+        text-align: center;
+    }
+    .title,section .item,main,footer{
+        text-align: center;
+        margin: auto;
+    }
+    .social{
+        align-items: center;
+        justify-content: center;
+    }
+}
